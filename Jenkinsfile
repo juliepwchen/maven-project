@@ -32,7 +32,7 @@ pipeline {
                 success {
                     echo 'Code sucessfully deploy to Production'
                 }
-                fail {
+                failure {
                     echo 'Deployment Fail'
                 }
             }
