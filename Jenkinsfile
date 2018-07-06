@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'localMaven'
+    }
 
     parameters {
         string(
@@ -19,7 +22,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/Users/juliechen/Documents/apache-maven-3.3.9/bin/mvn clean package'
+                sh 'mvn clean package'
             }
             post {
                 success {
